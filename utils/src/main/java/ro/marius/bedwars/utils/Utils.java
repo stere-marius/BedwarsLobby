@@ -5,11 +5,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Utils {
 
@@ -74,6 +73,31 @@ public class Utils {
         List<Location> list = new ArrayList<>();
         stringList.forEach(string -> list.add(getConvertedStringToLocation(string)));
         return list;
+    }
+
+    public static Set<Integer> getListOfIntegerFromObject(Object slot) {
+
+        if (slot == null) return Collections.emptySet();
+
+        if (slot instanceof Integer) return Collections.singleton((Integer) slot);
+
+        if (!(slot instanceof String)) return Collections.emptySet();
+
+        String array = (String) slot;
+
+        return Arrays.stream(array.split(","))
+                .filter(Utils::isInteger)
+                .map(Integer::parseInt)
+                .collect(Collectors.toSet());
+    }
+
+    public static boolean isInteger(String string) {
+        try {
+            Integer.parseInt(string);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
 }

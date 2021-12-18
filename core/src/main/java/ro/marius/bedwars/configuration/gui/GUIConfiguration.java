@@ -1,22 +1,28 @@
 package ro.marius.bedwars.configuration.gui;
 
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
+import ro.marius.bedwars.utils.ConsoleWarning;
+import ro.marius.bedwars.utils.Utils;
 import ro.marius.bedwars.utils.XMaterial;
+import ro.marius.bedwars.utils.itembuilder.ItemBuilder;
+import ro.marius.bedwars.utils.itembuilder.ItemBuilderReader;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class GUIConfiguration {
 
     private final File file;
     private YamlConfiguration config;
+    private final BedwarsLobbyPlugin plugin;
+
+    private final Map<String, ConfiguredGuiDAO> cacheReadGUI = new HashMap<>();
 
     public GUIConfiguration(BedwarsLobbyPlugin plugin) {
+        this.plugin = plugin;
         this.file = new File(plugin.getDataFolder(), "menus.yml");
         this.config = YamlConfiguration.loadConfiguration(file);
     }
@@ -105,9 +111,50 @@ public class GUIConfiguration {
         saveConfig();
     }
 
-    public Map<Integer, ConfiguredGuiItemDAO> readInventory(String path) {
+    public ConfiguredGuiDAO readInventory(String path) {
+        if (cacheReadGUI.containsKey(path)) return cacheReadGUI.get(path);
 
-        return new HashMap<>();
+        int size = readInventorySize(path + ".Size");
+        String name = config.getString(path + ".InventoryName");
+        Map<Integer, ConfiguredGuiItemDAO> items = new HashMap<>();
+        ConfiguredGuiDAO value = new ConfiguredGuiDAO(name, size, items);
+
+        cacheReadGUI.putIfAbsent(path, value);
+
+        return value;
+    }
+
+    private int readInventorySize(String path) {
+        int size = config.getInt(path);
+
+        if ((size % 9) != 0) {
+            ConsoleWarning.sendWarning(Arrays.asList
+                    (
+                            "&4[Bedwars][Path=" + path + "] &cThe inventory size must be multiply of 9 ",
+                            "&cAs example: 9, 18, 27"
+                    )
+            );
+            return 54;
+        }
+
+        return size;
+    }
+
+    private Map<Integer, ConfiguredGuiItemDAO> readInventoryItems(String path) {
+        MemorySection memorySection = (MemorySection) config.getConfigurationSection(path + ".Contents");
+
+        if (memorySection == null) return new HashMap<>();
+
+        Map<Integer, ConfiguredGuiItemDAO> items = new HashMap<>();
+
+        for (String name : memorySection.getKeys(false)) {
+            Set<Integer> slots = Utils.getListOfIntegerFromObject(config.get(path + ".Contents." + name + ".Slot"));
+            ItemBuilder builder = ItemBuilderReader.readFromConfig(config, path + ".Contents." + name, plugin.getVersionHandler().getVersionWrapper());
+            List<String> playerCommands = config.getStringList(path + ".Contents." + name + ".PlayerCommands");
+            slots.forEach(s -> items.put(s, new ConfiguredGuiItemDAO(builder, playerCommands)));
+        }
+
+        return items;
     }
 
     public void saveConfig() {

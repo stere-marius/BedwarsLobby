@@ -1,2 +1,4 @@
-package ro.marius.bedwars.configuration.gui;public class ConfiguredGuiDAO {
+package ro.marius.bedwars.configuration.gui;
+
+public class ConfiguredGuiDAO {
 }

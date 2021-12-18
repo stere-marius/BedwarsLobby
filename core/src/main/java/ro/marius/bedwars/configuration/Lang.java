@@ -3,7 +3,7 @@ package ro.marius.bedwars.configuration;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
-import ro.marius.bedwars.BedWarsPlugin;
+import ro.marius.bedwars.BedwarsLobbyPlugin;
 import ro.marius.bedwars.utils.Utils;
 
 import java.io.File;
@@ -144,18 +144,17 @@ public enum Lang {
     ;
 
     private static YamlConfiguration LANG;
-    private Object message;
+    private final Object message;
 
     Lang(Object message) {
         this.message = message;
-
     }
 
     public static void setFile(YamlConfiguration lANG2) {
         LANG = lANG2;
     }
 
-    public static void loadLang(BedWarsPlugin plugin) {
+    public static void loadLang(BedwarsLobbyPlugin plugin) {
 
         File lang = new File(plugin.getDataFolder(), "lang.yml");
         Logger log = Bukkit.getLogger();
@@ -185,10 +184,6 @@ public enum Lang {
             e.printStackTrace();
         }
 
-    }
-
-    public static void reloadConfig() {
-        LANG = YamlConfiguration.loadConfiguration(new File(BedWarsPlugin.getInstance().getDataFolder(), "lang.yml"));
     }
 
     public List<String> getList() {

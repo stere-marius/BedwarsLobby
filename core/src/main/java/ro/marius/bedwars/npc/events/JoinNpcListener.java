@@ -3,8 +3,6 @@ package ro.marius.bedwars.npc.events;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
-import ro.marius.bedwars.handler.ManagerHandler;
-import ro.marius.bedwars.menu.extra.JoinInventory;
 
 public class JoinNpcListener implements Listener {
 
@@ -23,8 +21,8 @@ public class JoinNpcListener implements Listener {
 
         if(arenaType == null) return;
 
-        JoinInventory joinInventory = new JoinInventory(arenaType);
-        e.getPlayer().openInventory(joinInventory.getInventory());
+//        JoinInventory joinInventory = new JoinInventory(arenaType);
+//        e.getPlayer().openInventory(joinInventory.getInventory());
     }
 
 }

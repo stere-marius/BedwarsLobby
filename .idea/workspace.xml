@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ab0f27-16b6-406f-92ba-c5602f2ab781" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/VersionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1_10_R1/src/main/java/ro/marius/bedwars/v1_10_R1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1_13_R2/src/main/java/ro/marius/bedwars/v1_13_R2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1_15_R1/src/main/java/ro/marius/bedwars/v1_15_R1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1_16_R2/src/main/java/ro/marius/bedwars/v1_16_R2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/v1_16_R3/src/main/java/ro/marius/bedwars/v1_16_R3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abstraction/src/main/java/ro/marius/bedwars/VersionWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/abstraction/src/main/java/ro/marius/bedwars/VersionWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/Lang.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/Lang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiItemDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/events/JoinNpcListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/events/JoinNpcListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleWarning.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +78,11 @@
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ro.marius.bedwars.configuration" />
       <recent name="ro.marius.bedwars.menu" />
       <recent name="ro.marius.bedwars.arena.mechanics" />
       <recent name="ro.marius.bedwars.factories" />
       <recent name="ro.marius.bedwars.utils" />
-      <recent name="ro.marius.bedwars" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -79,10 +96,22 @@
       <workItem from="1639659859287" duration="1930000" />
       <workItem from="1639667346074" duration="63000" />
       <workItem from="1639667455034" duration="13915000" />
+      <workItem from="1639826470354" duration="5031000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

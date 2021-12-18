@@ -10,6 +10,7 @@ public class BedwarsLobbyPlugin extends JavaPlugin {
 
     private NPCHandler npcHandler;
     private ArenaHandler arenaHandler;
+    private VersionWrapper versionWrapper;
 
     @Override
     public void onEnable() {

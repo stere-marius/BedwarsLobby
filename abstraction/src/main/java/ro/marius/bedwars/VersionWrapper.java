@@ -54,19 +54,7 @@ public interface VersionWrapper {
     void sendTitle(Player p, Integer fadeIn, Integer stay, Integer fadeOut, String title, String subtitle,
                    boolean send, boolean sendAgainTitle);
 
-    Set<Block> getPlacedBedBlocks(BlockFace bedFace, Location loc, Material bedMaterial);
-
-    void hidePlayer(Player p);
-
-    void sendPlayerInfoPackets(Player p, JavaPlugin javaPlugin);
-
-    BlockFace getBedFace(Location location);
-
-    Location getBedHead(Location location);
-
     int getPing(Player p);
-
-    void freezeEntity(Entity en);
 
     ItemStack addGlow(ItemStack item);
 
@@ -75,23 +63,5 @@ public interface VersionWrapper {
     boolean containsNBTTag(ItemStack item, String tag);
 
     String getNBTTag(ItemStack item, String tag);
-
-    void sendHideEquipmentPacket(Player player, Set<Player> playersToSendPacket);
-
-    void sendShowEquipmentPacket(Player player, Set<Player> playersToSendPacket);
-
-    Villager spawnVillager(Location location);
-
-    Blaze spawnBlaze(Location location);
-
-    Creeper spawnCreeper(Location location);
-
-    Skeleton spawnSkeleton(Location location);
-
-    IronGolem spawnGolem(Location location);
-
-    Zombie spawnZombie(Location location);
-
-    PigZombie spawnPigZombie(Location location);
 
 }

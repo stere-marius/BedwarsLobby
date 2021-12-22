@@ -6,6 +6,7 @@ import java.util.*;
 
 public class Arena {
 
+    private String serverName;
     private String name;
     private String type;
     private int playersPerTeam;
@@ -17,7 +18,15 @@ public class Arena {
     private Set<UUID> rejoin, spectators;
     private final List<ArenaObserver> observers = new ArrayList<>();
 
-    public Arena(String name, String type, int playersPerTeam, int maxPlayers, int playersPlaying, ArenaState state, Set<UUID> rejoin, Set<UUID> spectators) {
+    public Arena(
+                 String name,
+                 String type,
+                 int playersPerTeam,
+                 int maxPlayers,
+                 int playersPlaying,
+                 ArenaState state,
+                 Set<UUID> rejoin,
+                 Set<UUID> spectators) {
         this.name = name;
         this.type = type;
         this.playersPerTeam = playersPerTeam;
@@ -26,6 +35,14 @@ public class Arena {
         this.state = state;
         this.rejoin = rejoin;
         this.spectators = spectators;
+    }
+
+    public String getServerName() {
+        return serverName;
+    }
+
+    public void setServerName(String serverName) {
+        this.serverName = serverName;
     }
 
     public String getName() {

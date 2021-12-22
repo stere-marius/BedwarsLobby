@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ab0f27-16b6-406f-92ba-c5602f2ab781" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/BedwarsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/subcommands/NPCCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/LanguageKeys.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/LanguageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/ArenaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/ArenaState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/Lang.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/VersionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/VersionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/ArenaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/ArenaHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NPCHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NpcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NpcConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +30,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -42,7 +51,9 @@
     </option>
   </component>
   <component name="ProjectId" id="22Muc3U3uJRpFpHKp0gc8rJzupO" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -86,7 +97,9 @@
       <workItem from="1639659859287" duration="1930000" />
       <workItem from="1639667346074" duration="63000" />
       <workItem from="1639667455034" duration="13915000" />
-      <workItem from="1639826470354" duration="7928000" />
+      <workItem from="1639826470354" duration="11986000" />
+      <workItem from="1639937583152" duration="10374000" />
+      <workItem from="1640184312590" duration="3497000" />
     </task>
     <servers />
   </component>
@@ -103,5 +116,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

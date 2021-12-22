@@ -90,6 +90,11 @@ public class NpcConfiguration {
         this.saveFile();
     }
 
+    public void removeNpcConfiguration(int id) {
+        this.config.set(getNpcConfigPath(id), null);
+        this.saveFile();
+    }
+
     public void saveFile() {
         try {
             this.config.save(this.file);

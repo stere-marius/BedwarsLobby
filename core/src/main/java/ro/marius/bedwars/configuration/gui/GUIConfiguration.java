@@ -3,7 +3,7 @@ package ro.marius.bedwars.configuration.gui;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
-import ro.marius.bedwars.utils.ConsoleWarning;
+import ro.marius.bedwars.utils.ConsoleLogger;
 import ro.marius.bedwars.utils.Utils;
 import ro.marius.bedwars.utils.XMaterial;
 import ro.marius.bedwars.utils.itembuilder.ItemBuilder;
@@ -116,7 +116,7 @@ public class GUIConfiguration {
 
         int size = readInventorySize(path + ".Size");
         String name = config.getString(path + ".InventoryName");
-        Map<Integer, ConfiguredGuiItemDAO> items = new HashMap<>();
+        Map<Integer, ConfiguredGuiItemDAO> items = readInventoryItems(path);
         ConfiguredGuiDAO value = new ConfiguredGuiDAO(name, size, items);
 
         cacheReadGUI.putIfAbsent(path, value);
@@ -128,9 +128,9 @@ public class GUIConfiguration {
         int size = config.getInt(path);
 
         if ((size % 9) != 0) {
-            ConsoleWarning.sendWarning(Arrays.asList
+            ConsoleLogger.sendWarning(Arrays.asList
                     (
-                            "&4[Bedwars][Path=" + path + "] &cThe inventory size must be multiply of 9 ",
+                            "&4[Bedwars][Path=" + path + "] &cThe inventory size must be multiplier of 9 ",
                             "&cAs example: 9, 18, 27"
                     )
             );

@@ -14,6 +14,7 @@ import ro.marius.bedwars.npc.skin.SkinFetcher;
 
 import java.io.File;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class NPCHandler {
 
@@ -95,58 +96,49 @@ public class NPCHandler {
         npcList.add(npcArena);
     }
 
+
+    public List<NPCArena> getNPCList(Chunk chunk) {
+        return  arenaTypeNpc
+                .values()
+                .stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toSet())
+                .stream()
+                .filter(npc -> npc.getNpcHologram().getLocation().getChunk().equals(chunk))
+                .collect(Collectors.toList());
+    }
+
+    public Optional<NPCArena> getNPCByUUID(UUID uuid) {
+
+        return  arenaTypeNpc
+                .values()
+                .stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toSet())
+                .stream()
+                .filter(npc -> npc.getUuid().equals(uuid))
+                .findFirst();
+    }
+
     public void despawnNPC(int id) {
         joinNPC.removeNPC(id);
     }
 
-    public List<NPCArena> getNPCList(Chunk chunk) {
+    public int getNextNPCId(){ return npcConfiguration.getNewNpcID();}
 
-        // TODO: Convert to stream Java 8
-
-        List<NPCArena> list = new ArrayList<>();
-
-        for (List<NPCArena> npcArena : this.arenaTypeNpc.values()) {
-
-            for (NPCArena npc : npcArena) {
-
-                if (!npc.getNpcHologram().getLocation().getChunk().equals(chunk)) {
-                    continue;
-                }
-
-                list.add(npc);
-            }
-
-        }
-
-        return list;
+    public NpcConfiguration getNpcConfiguration() {
+        return npcConfiguration;
     }
-
-    public NPCArena getNPCByUUID(UUID uuid) {
-
-        // TODO: Convert to stream Java 8
-
-        for (List<NPCArena> npcArena : this.arenaTypeNpc.values()) {
-
-            for (NPCArena npc : npcArena) {
-
-                if (!npc.getUuid().equals(uuid)) {
-                    continue;
-                }
-
-                return npc;
-            }
-
-        }
-
-        return null;
-
-    }
-
     public Map<Integer, String> getNpcIdArenaType() {
         return npcIdArenaType;
     }
 
     public Map<String, List<NPCArena>> getArenaTypeNpc() {
         return arenaTypeNpc;
+    }
+
+    public void setSkin(int index, NPCSkin npcSkin) {
+        joinNPC.updateSkin(index, npcSkin);
+        npcConfiguration.setSkin(index, npcSkin);
     }
 }

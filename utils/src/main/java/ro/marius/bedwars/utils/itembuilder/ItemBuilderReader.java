@@ -2,7 +2,7 @@ package ro.marius.bedwars.utils.itembuilder;
 
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.VersionWrapper;
-import ro.marius.bedwars.utils.ConsoleWarning;
+import ro.marius.bedwars.utils.ConsoleLogger;
 import ro.marius.bedwars.utils.XMaterial;
 
 import java.util.Arrays;
@@ -16,7 +16,7 @@ public class ItemBuilderReader {
         String material = configuration.getString(path + ".Material");
 
         if (material == null) {
-            ConsoleWarning.sendWarning(
+            ConsoleLogger.sendWarning(
                     Arrays.asList(
                             "&4&lINVALID ITEM",
                             "&ePath " + path + ".Material", "&eCouldn't find the material",
@@ -29,7 +29,7 @@ public class ItemBuilderReader {
         XMaterial mat = XMaterial.matchXMaterial(material, (byte) data);
 
         if (mat == null) {
-            ConsoleWarning.sendWarning(
+            ConsoleLogger.sendWarning(
                     Arrays.asList(
                             "&4&lINVALID ITEM",
                             "&ePath " + path + ".Material",

@@ -4,7 +4,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -98,6 +103,21 @@ public class Utils {
         } catch (NumberFormatException e) {
             return false;
         }
+    }
+
+    public static void teleportServer(Player p, String server, JavaPlugin javaPlugin) {
+
+        ByteArrayOutputStream b = new ByteArrayOutputStream();
+        DataOutputStream out = new DataOutputStream(b);
+
+        try {
+            out.writeUTF("Connect");
+            out.writeUTF(server);
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+
+        p.sendPluginMessage(javaPlugin, "BungeeCord", b.toByteArray());
     }
 
 }

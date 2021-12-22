@@ -2,33 +2,34 @@ package ro.marius.bedwars.handler;
 
 import ro.marius.bedwars.arena.Arena;
 import ro.marius.bedwars.arena.ArenaState;
-import ro.marius.bedwars.arena.observers.ArenaObserver;
+import ro.marius.bedwars.sockets.ServerInfo;
 
-import java.awt.geom.Area;
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class ArenaHandler {
 
-    private final Map<UUID, Arena> arenas = new HashMap<>();
+    private final Map<ServerInfo, Arena> arenas = new HashMap<>();
 
-    public void addGame(UUID uuid,
-                        String serverName,
-                        String arenaType,
-                        String arenaName,
-                        int playersPerTeam,
-                        int playersPlaying,
-                        int maxPlayers,
-                        ArenaState arenaState,
-                        Set<UUID> rejoin,
-                        Set<UUID> spectators
-                        ) {
+    public void addGame(
+            String serverIP,
+            String serverPort,
+            String arenaType,
+            String arenaName,
+            int playersPerTeam,
+            int playersPlaying,
+            int maxPlayers,
+            ArenaState arenaState,
+            Set<UUID> rejoin,
+            Set<UUID> spectators
+    ) {
 
-        Arena arenaFound = arenas.get(uuid);
+        ServerInfo serverInfo = new ServerInfo(serverIP, serverPort);
+        Arena arenaFound = arenas.get(serverInfo);
 
         if (arenaFound == null) {
             Arena arena = new Arena(arenaName, arenaType, playersPerTeam, maxPlayers, playersPlaying, arenaState, rejoin, spectators);
-            arenas.put(uuid, arena);
+            arenas.put(serverInfo, arena);
             arena.notifyObservers();
             return;
         }
@@ -44,6 +45,12 @@ public class ArenaHandler {
         arenaFound.notifyObservers();
     }
 
+    public Arena findArena(String name) {
+        return arenas.values().stream()
+                .filter(s -> s.getName().equals(name) && s.getState() == ArenaState.WAITING)
+                .findFirst().orElse(null);
+    }
+
     public int getPlayersPlaying(String arenaType) {
 
         return arenas
@@ -54,7 +61,15 @@ public class ArenaHandler {
                 .mapToInt(Integer::intValue).sum();
     }
 
-    public Collection<Arena> getArenas(){
+    public Set<String> getArenaTypes() {
+        return arenas
+                .values()
+                .stream()
+                .map(Arena::getType)
+                .collect(Collectors.toSet());
+    }
+
+    public Collection<Arena> getArenas() {
         return arenas.values();
     }
 

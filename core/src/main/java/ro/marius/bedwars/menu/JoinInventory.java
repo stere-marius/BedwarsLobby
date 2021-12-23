@@ -8,9 +8,9 @@ import org.jetbrains.annotations.NotNull;
 import ro.marius.bedwars.configuration.gui.ConfiguredGuiDAO;
 import ro.marius.bedwars.configuration.gui.ConfiguredGuiItemDAO;
 import ro.marius.bedwars.configuration.gui.GUIConfiguration;
-import ro.marius.bedwars.utils.StringUtils;
-import ro.marius.bedwars.utils.Utils;
-import ro.marius.bedwars.utils.itembuilder.ItemBuilder;
+import ro.marius.bedwars.StringUtils;
+import ro.marius.bedwars.Utils;
+import ro.marius.bedwars.itembuilder.ItemBuilder;
 
 import java.util.Map;
 

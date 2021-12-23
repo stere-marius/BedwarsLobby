@@ -2,8 +2,8 @@ package ro.marius.bedwars.handler;
 
 import org.bukkit.Bukkit;
 import ro.marius.bedwars.*;
-import ro.marius.bedwars.utils.ServerVersion;
-import ro.marius.bedwars.utils.v1_8_R3;
+import ro.marius.bedwars.ServerVersion;
+import ro.marius.bedwars.v1_8_R3;
 
 public class VersionHandler {
 

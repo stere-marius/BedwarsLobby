@@ -19,8 +19,8 @@ import ro.marius.bedwars.factories.BedwarsNPCFactory;
 import ro.marius.bedwars.npc.BedwarsJoinNPC;
 import ro.marius.bedwars.npc.events.PlayerInteractJoinNpcEvent;
 import ro.marius.bedwars.npc.skin.SkinFetcher;
-import ro.marius.bedwars.utils.ReflectionUtils;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.ReflectionUtils;
+import ro.marius.bedwars.Utils;
 
 import java.util.*;
 import java.util.stream.Stream;

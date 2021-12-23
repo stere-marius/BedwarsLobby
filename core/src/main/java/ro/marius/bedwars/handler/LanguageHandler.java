@@ -3,7 +3,7 @@ package ro.marius.bedwars.handler;
 import org.bukkit.entity.Player;
 import ro.marius.bedwars.configuration.LanguageConfiguration;
 import ro.marius.bedwars.configuration.LanguageKeys;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.Utils;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class LanguageHandler {
     public void sendMessage(LanguageKeys path, Player... players) {
 
         for (Player p : players) {
-            String message = languageConfiguration.getString(langPath.get(p.getUniqueId()) + "." + path.name());
+            String message = languageConfiguration.getString(getLangPath(p.getUniqueId()) + "." + path.getKey());
             p.sendMessage(Utils.translate(message));
         }
 
@@ -30,13 +30,13 @@ public class LanguageHandler {
 
     public void sendListMessage(LanguageKeys key, Player... players) {
         for (Player p : players) {
-            List<String> messages = languageConfiguration.getStringList(langPath.get(p.getUniqueId()) + "." + key.name());
+            List<String> messages = languageConfiguration.getStringList(langPath.get(p.getUniqueId()) + "." + key.getKey());
             messages.forEach(m -> sendMessage(key, p));
         }
     }
 
 
-    public String getLangPath(UUID uuid) {
+    private String getLangPath(UUID uuid) {
 
         String path = langPath.get(uuid);
 

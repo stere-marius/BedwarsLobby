@@ -1,8 +1,8 @@
 package ro.marius.bedwars.factories;
 
 import ro.marius.bedwars.*;
-import ro.marius.bedwars.utils.NPC_V1_8_R3;
-import ro.marius.bedwars.utils.ServerVersion;
+import ro.marius.bedwars.NPC_V1_8_R3;
+import ro.marius.bedwars.ServerVersion;
 
 public class BedwarsNPCFactory {
 

@@ -3,8 +3,6 @@ package ro.marius.bedwars.npc;
 import org.bukkit.Bukkit;
 import org.bukkit.Chunk;
 import org.bukkit.Location;
-import org.bukkit.metadata.FixedMetadataValue;
-import org.bukkit.metadata.MetadataValue;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
 import ro.marius.bedwars.NPCSkin;
 import ro.marius.bedwars.arena.observers.NPCObserver;
@@ -12,7 +10,6 @@ import ro.marius.bedwars.npc.bedwars.BedwarsNPC;
 import ro.marius.bedwars.npc.citizens.CitizensNPC;
 import ro.marius.bedwars.npc.skin.SkinFetcher;
 
-import java.io.File;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -26,23 +23,19 @@ public class NPCHandler {
 
     private BedwarsJoinNPC joinNPC;
 
+
     public NPCHandler(BedwarsLobbyPlugin plugin){
         this.plugin = plugin;
         this.npcConfiguration = new NpcConfiguration(plugin);
     }
 
-    public void loadNPCGameObservers() {
-        plugin.getArenaHandler()
-                .getArenas()
-                .forEach(game -> game.registerObserver(new NPCObserver(game, this, plugin.getArenaHandler())));
-    }
 
 
     public void loadNPCs() {
         String joinNPCAdapter = plugin.getConfig().getString("JoinArenaNpcAdapter", "BEDWARS");
 
         // For Citizens adapter the load NPC logic will be handled when the Citizens plugin gets loaded
-        this.joinNPC = "CITIZENS".equalsIgnoreCase(joinNPCAdapter) ? new CitizensNPC() : new BedwarsNPC(plugin);
+        this.joinNPC = "CITIZENS".equalsIgnoreCase(joinNPCAdapter) ? new CitizensNPC(plugin) : new BedwarsNPC(plugin);
         Bukkit.getServer().getPluginManager().registerEvents(joinNPC, plugin);
 
         if (!joinNPCAdapter.equalsIgnoreCase("CITIZENS")) {
@@ -94,6 +87,7 @@ public class NPCHandler {
         NPCArena npcArena = new NPCArena(index, location, arenaType, lines);
         npcArena.getNpcHologram().spawnHolograms(plugin.getArenaHandler().getPlayersPlaying(arenaType));
         npcList.add(npcArena);
+        npcIdArenaType.put(index, arenaType);
     }
 
 

@@ -1,8 +1,7 @@
 package ro.marius.bedwars.sockets;
 
 import ro.marius.bedwars.handler.ArenaHandler;
-import ro.marius.bedwars.handler.BungeecordHandler;
-import ro.marius.bedwars.utils.ConsoleLogger;
+import ro.marius.bedwars.ConsoleLogger;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -23,6 +22,7 @@ public class BedwarsServerSocket implements Runnable {
     public BedwarsServerSocket(ArenaHandler arenaHandler,  int port) {
         this.arenaHandler = arenaHandler;
         this.setupServerSocket(port);
+        this.setStarted(true);
     }
 
     private void setupServerSocket(int port) {
@@ -43,7 +43,7 @@ public class BedwarsServerSocket implements Runnable {
 
     @Override
     public void run() {
-        ConsoleLogger.sendSuccess("Started BedwarsServerSocket. Finding clients.");
+        ConsoleLogger.sendSuccess("&a&lStarted BedwarsServerSocket. Finding clients.");
 
         while (isStarted) {
 
@@ -68,5 +68,9 @@ public class BedwarsServerSocket implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void closeClientsSocket() {
+        clients.forEach(ClientSocket::close);
     }
 }

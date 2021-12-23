@@ -11,7 +11,7 @@ import ro.marius.bedwars.ISubCommand;
 import ro.marius.bedwars.npc.NPCArena;
 import ro.marius.bedwars.npc.NPCHandler;
 import ro.marius.bedwars.npc.skin.SkinFetcher;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.Utils;
 
 import java.util.*;
 

@@ -4,8 +4,8 @@ import org.bukkit.Location;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
 import org.bukkit.metadata.MetadataValue;
-import ro.marius.bedwars.utils.EntityUtils;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.EntityUtils;
+import ro.marius.bedwars.Utils;
 
 import java.util.ArrayList;
 import java.util.List;

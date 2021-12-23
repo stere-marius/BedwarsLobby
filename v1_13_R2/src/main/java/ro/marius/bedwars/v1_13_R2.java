@@ -6,7 +6,6 @@ import net.minecraft.server.v1_13_R2.PlayerConnection;
 import org.bukkit.craftbukkit.v1_13_R2.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import ro.marius.bedwars.utils.Utils;
 
 public class v1_13_R2 implements VersionWrapper {
     @Override

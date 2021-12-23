@@ -1,0 +1,15 @@
+ro\marius\bedwars\Utils.class
+ro\marius\bedwars\ServerVersion.class
+ro\marius\bedwars\InventoryRestore.class
+ro\marius\bedwars\EntityUtils.class
+ro\marius\bedwars\StringUtils.class
+ro\marius\bedwars\ConsoleLogger.class
+ro\marius\bedwars\itembuilder\PotionBuilder.class
+ro\marius\bedwars\XMaterial$1.class
+ro\marius\bedwars\XMaterial.class
+ro\marius\bedwars\itembuilder\ItemBuilderReader.class
+ro\marius\bedwars\XMaterial$MinecraftVersion.class
+ro\marius\bedwars\itembuilder\ItemBuilder.class
+ro\marius\bedwars\ReflectionUtils.class
+ro\marius\bedwars\InventoryUtils.class
+ro\marius\bedwars\itembuilder\SkullBuilder.class

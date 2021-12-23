@@ -1,6 +1,6 @@
 package ro.marius.bedwars.configuration.gui;
 
-import ro.marius.bedwars.utils.itembuilder.ItemBuilder;
+import ro.marius.bedwars.itembuilder.ItemBuilder;
 
 import java.util.List;
 

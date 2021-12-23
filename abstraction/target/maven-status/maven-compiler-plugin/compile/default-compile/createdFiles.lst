@@ -1,0 +1,5 @@
+ro\marius\bedwars\NPCSkin.class
+ro\marius\bedwars\NPCPlayer.class
+ro\marius\bedwars\AbstractCommand.class
+ro\marius\bedwars\VersionWrapper.class
+ro\marius\bedwars\ISubCommand.class

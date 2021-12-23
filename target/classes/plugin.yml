@@ -1,0 +1,7 @@
+name: BedwarsLobby
+main: ro.marius.bedwars.BedwarsLobbyPlugin
+author: Marius
+description: Bedwars Lobby Plugin by Marius
+version: 1.0
+api-version: 1.13
+softdepend: [Citizens, PlaceholderAPI, Parties]

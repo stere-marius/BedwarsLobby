@@ -5,22 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69ab0f27-16b6-406f-92ba-c5602f2ab781" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/BedwarsCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/subcommands/NPCCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/LanguageKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/LanguageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/core.iml" beforeDir="false" afterPath="$PROJECT_DIR$/core/core.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/BedwarsLobbyPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/Arena.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/ArenaState.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/ArenaState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/Lang.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/observers/NPCObserver.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/observers/NPCObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/BedwarsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/BedwarsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/subcommands/NPCCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/commands/subcommands/NPCCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/DefaultConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/DefaultConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/LanguageConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/LanguageConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/ConfiguredGuiItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/configuration/gui/GUIConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/database/mysql/MySQLDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/database/mysql/MySQLDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/factories/BedwarsNPCFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/factories/BedwarsNPCFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/ArenaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/ArenaHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/BungeecordHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/BungeecordHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/LanguageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/LanguageHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/PlayerDataHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/PlayerDataHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/VersionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/handler/VersionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/menu/JoinInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/JoinNpcHologram.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/JoinNpcHologram.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NPCHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NPCHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NpcConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/NpcConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/bedwars/BedwarsNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/bedwars/BedwarsNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/citizens/CitizensNPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/citizens/CitizensNPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/events/JoinNpcListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/npc/events/JoinNpcListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/BedwarsServerSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/BedwarsServerSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/ClientSocket.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/ClientSocket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/ServerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/sockets/ServerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ConsoleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/ConsoleLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/EntityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/EntityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/InventoryRestore.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/InventoryRestore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/InventoryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/InventoryUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ReflectionUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/ReflectionUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/ServerVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/ServerVersion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/StringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/StringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/XMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/XMaterial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/itembuilder/ItemBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/ItemBuilderReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/itembuilder/ItemBuilderReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/PotionBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/itembuilder/PotionBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/utils/itembuilder/SkullBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/utils/src/main/java/ro/marius/bedwars/itembuilder/SkullBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_10_R1/src/main/java/ro/marius/bedwars/NPC_V_1_10_R1.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_10_R1/src/main/java/ro/marius/bedwars/NPC_V_1_10_R1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_13_R2/src/main/java/ro/marius/bedwars/NPC_V_1_13_R2.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_13_R2/src/main/java/ro/marius/bedwars/NPC_V_1_13_R2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_13_R2/src/main/java/ro/marius/bedwars/v1_13_R2.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_13_R2/src/main/java/ro/marius/bedwars/v1_13_R2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_15_R1/src/main/java/ro/marius/bedwars/NPC_V_1_15_R1.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_15_R1/src/main/java/ro/marius/bedwars/NPC_V_1_15_R1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_15_R1/src/main/java/ro/marius/bedwars/v1_15_R1.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_15_R1/src/main/java/ro/marius/bedwars/v1_15_R1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_16_R2/src/main/java/ro/marius/bedwars/NPC_V_1_16_R2.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_16_R2/src/main/java/ro/marius/bedwars/NPC_V_1_16_R2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_16_R2/src/main/java/ro/marius/bedwars/v1_16_R2.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_16_R2/src/main/java/ro/marius/bedwars/v1_16_R2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_16_R3/src/main/java/ro/marius/bedwars/NPC_V_1_16_R3.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_16_R3/src/main/java/ro/marius/bedwars/NPC_V_1_16_R3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_16_R3/src/main/java/ro/marius/bedwars/v1_16_R3.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_16_R3/src/main/java/ro/marius/bedwars/v1_16_R3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_8_R3/src/main/java/ro/marius/bedwars/utils/NPC_V1_8_R3.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_8_R3/src/main/java/ro/marius/bedwars/NPC_V1_8_R3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_8_R3/src/main/java/ro/marius/bedwars/utils/v1_8_R3.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_8_R3/src/main/java/ro/marius/bedwars/v1_8_R3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_9_R1/src/main/java/ro/marius/bedwars/NPC_V1_9_R1.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_9_R1/src/main/java/ro/marius/bedwars/NPC_V1_9_R1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/v1_9_R1/src/main/java/ro/marius/bedwars/v1_9_R1.java" beforeDir="false" afterPath="$PROJECT_DIR$/v1_9_R1/src/main/java/ro/marius/bedwars/v1_9_R1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,9 +102,10 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="corretto-11" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/src/main/java/ro/marius/bedwars/arena/observers" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/eclipse-workspace/eclipse-workspace/BedwarsLobby" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -99,7 +139,9 @@
       <workItem from="1639667455034" duration="13915000" />
       <workItem from="1639826470354" duration="11986000" />
       <workItem from="1639937583152" duration="10374000" />
-      <workItem from="1640184312590" duration="3497000" />
+      <workItem from="1640184312590" duration="30012000" />
+      <workItem from="1640265396335" duration="7042000" />
+      <workItem from="1640274130407" duration="4000000" />
     </task>
     <servers />
   </component>

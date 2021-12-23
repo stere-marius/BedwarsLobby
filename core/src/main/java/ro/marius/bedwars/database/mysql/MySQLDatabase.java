@@ -1,17 +1,12 @@
 package ro.marius.bedwars.database.mysql;
 
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
 import ro.marius.bedwars.database.Database;
 import ro.marius.bedwars.playerdata.ArenaData;
-import ro.marius.bedwars.utils.ConsoleLogger;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.ConsoleLogger;
 
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 

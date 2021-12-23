@@ -3,11 +3,11 @@ package ro.marius.bedwars.configuration.gui;
 import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
-import ro.marius.bedwars.utils.ConsoleLogger;
-import ro.marius.bedwars.utils.Utils;
-import ro.marius.bedwars.utils.XMaterial;
-import ro.marius.bedwars.utils.itembuilder.ItemBuilder;
-import ro.marius.bedwars.utils.itembuilder.ItemBuilderReader;
+import ro.marius.bedwars.ConsoleLogger;
+import ro.marius.bedwars.Utils;
+import ro.marius.bedwars.XMaterial;
+import ro.marius.bedwars.itembuilder.ItemBuilder;
+import ro.marius.bedwars.itembuilder.ItemBuilderReader;
 
 import java.io.File;
 import java.io.IOException;

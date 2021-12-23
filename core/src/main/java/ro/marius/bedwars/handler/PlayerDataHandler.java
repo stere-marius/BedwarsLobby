@@ -10,7 +10,6 @@ public class PlayerDataHandler {
 
     private final Map<UUID, PlayerData> playerData = new HashMap<>();
 
-
     public Map<UUID, PlayerData> getPlayerData() {
         return playerData;
     }

@@ -12,9 +12,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.metadata.FixedMetadataValue;
-import ro.marius.bedwars.BedWarsPlugin;
+import ro.marius.bedwars.BedwarsLobbyPlugin;
 import ro.marius.bedwars.NPCSkin;
-import ro.marius.bedwars.handler.ManagerHandler;
 import ro.marius.bedwars.npc.BedwarsJoinNPC;
 import ro.marius.bedwars.npc.events.PlayerInteractJoinNpcEvent;
 
@@ -24,6 +23,13 @@ import java.util.Map;
 public class CitizensNPC extends BedwarsJoinNPC {
 
     private final Map<Integer, NPC> spawnedNpcID = new HashMap<>();
+
+    private final BedwarsLobbyPlugin plugin;
+
+    public CitizensNPC(BedwarsLobbyPlugin plugin) {
+        this.plugin = plugin;
+    }
+
 
     public void spawnNPC(int id, Location location, String skinName) {
         if (spawnedNpcID.get(id) != null && spawnedNpcID.get(id).isSpawned())
@@ -39,7 +45,7 @@ public class CitizensNPC extends BedwarsJoinNPC {
             ((SkinnableEntity) npc.getEntity()).setSkinName(skinName);
         }
 
-        npc.getEntity().setMetadata("ro.marius.bedwars.NPCPlayer", new FixedMetadataValue(BedWarsPlugin.getInstance(), id));
+        npc.getEntity().setMetadata("ro.marius.bedwars.NPCPlayer", new FixedMetadataValue(plugin, id));
         spawnedNpcID.put(id, npc);
     }
 
@@ -55,7 +61,7 @@ public class CitizensNPC extends BedwarsJoinNPC {
 
         npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_SIGN_METADATA, npcSkin.getSignature());
         npc.data().set(NPC.PLAYER_SKIN_TEXTURE_PROPERTIES_METADATA, npcSkin.getValue());
-        npc.getEntity().setMetadata("ro.marius.bedwars.NPCPlayer", new FixedMetadataValue(BedWarsPlugin.getInstance(), id));
+        npc.getEntity().setMetadata("ro.marius.bedwars.NPCPlayer", new FixedMetadataValue(plugin, id));
         spawnedNpcID.put(id, npc);
     }
 
@@ -104,7 +110,7 @@ public class CitizensNPC extends BedwarsJoinNPC {
 
     @EventHandler
     public void onCitizensLoad(CitizensEnableEvent e){
-        ManagerHandler.getNPCManager().loadNPC();
+        plugin.getNpcHandler().loadNPCs();
     }
 
 }

@@ -1,15 +1,22 @@
 package ro.marius.bedwars.sockets;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.bukkit.Bukkit;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import ro.marius.bedwars.arena.ArenaState;
 import ro.marius.bedwars.handler.ArenaHandler;
-import ro.marius.bedwars.handler.BungeecordHandler;
-import ro.marius.bedwars.utils.ConsoleLogger;
+import ro.marius.bedwars.ConsoleLogger;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -30,7 +37,7 @@ public class ClientSocket extends Thread {
         this.setupInputOutputStreams();
     }
 
-    private void setupInputOutputStreams(){
+    private void setupInputOutputStreams() {
         try {
             this.output = new DataOutputStream(socket.getOutputStream());
             this.input = new DataInputStream(socket.getInputStream());
@@ -43,59 +50,60 @@ public class ClientSocket extends Thread {
     @Override
     public void run() {
 
+        ConsoleLogger.sendSuccess("&a&lFound a new client for server socket with the address " + socket.getInetAddress().getHostAddress());
         String read = "";
 
         while (started) {
 
             try {
-                read = input.readUTF();
 
-                String[] info = read.split(",");
+                String string = input.readUTF();
 
-                Bukkit.broadcastMessage("Receiving info " + info.length);
+                if (string.equalsIgnoreCase("TEST CONNECTION")) continue;
 
-                for (String s : info) {
-                    System.out.println(s);
-                }
+                JsonObject jsonObject = new JsonParser().parse(string).getAsJsonObject();
 
-                if (info.length == 10) {
+                String serverIP = jsonObject.get("ServerIP").getAsString();
+                int port = jsonObject.get("ServerPort").getAsInt();
+                String arenaName = jsonObject.get("GameName").getAsString();
+                String arenaType = jsonObject.get("ArenaType").getAsString();
+                int playersPerTeam = jsonObject.get("PlayersPerTeam").getAsInt();
+                ArenaState arenaState = ArenaState.valueOf(jsonObject.get("MatchState").getAsString());
+                int playersPlaying = jsonObject.get("MatchPlayers").getAsInt();
+                int maxPlayers = jsonObject.get("MaxPlayers").getAsInt();
+                Set<UUID> rejoin = getSetFromJSONArray(jsonObject.get("RejoinUUID").getAsJsonArray());
+                Set<UUID> spectators = getSetFromJSONArray(jsonObject.get("SpectatorUUID").getAsJsonArray());
 
-                    String serverIP = info[0];
-                    String port = info[1];
-                    String arenaName = info[2];
-                    String arenaType = info[3];
-                    int playersPerTeam = Integer.parseInt(info[4]);
-                    ArenaState arenaState = ArenaState.valueOf(info[5].toUpperCase());
-                    int playersPlaying = Integer.parseInt(info[6]);
-                    int maxPlayers = Integer.parseInt(info[7]);
-                    Set<UUID> rejoin = convertToList(info[8]);
-                    Set<UUID> spectators = convertToList(info[9]);
-
-                    arenaHandler.addGame(
-                            serverIP,
-                            port,
-                            arenaType,
-                            arenaName,
-                            playersPerTeam,
-                            playersPlaying,
-                            maxPlayers,
-                            arenaState,
-                            rejoin,
-                            spectators
-                    );
-
-                }
+                Bukkit.broadcastMessage("Receiving info " + string);
+                arenaHandler.addGame(
+                        serverIP,
+                        port,
+                        arenaType,
+                        arenaName,
+                        playersPerTeam,
+                        playersPlaying,
+                        maxPlayers,
+                        arenaState,
+                        rejoin,
+                        spectators
+                );
 
             } catch (IOException e) {
-                ConsoleLogger.sendError("An exception occurred during the socket connection. Closing the connection.");
+                if (shouldLogException(e)) {
+                    ConsoleLogger.sendError("An exception occurred during the socket connection. Closing the connection.");
+                    e.printStackTrace();
+                }
                 break;
-//				e.printStackTrace();
             }
 
         }
 
         this.close();
 
+    }
+
+    public boolean shouldLogException(IOException exception) {
+        return !(exception instanceof SocketException);
     }
 
     public void close() {
@@ -106,15 +114,24 @@ public class ClientSocket extends Thread {
         }
     }
 
+    private Set<UUID> getSetFromJSONArray(JsonArray jsonArray) {
+        Set<UUID> uuidSet = new HashSet<>();
+
+        for (int i = 0; i < jsonArray.size(); i++) {
+            uuidSet.add(UUID.fromString(jsonArray.get(i).getAsString()));
+        }
+
+        return uuidSet;
+    }
+
     public Set<UUID> convertToList(String string) {
 
-        String split[] = string.replace("}", "").replace("{", "").split(",");
+        String[] split = string.replace("}", "").replace("{", "").split(",");
 
         Set<UUID> set = new HashSet<>();
 
-
-        for (int i = 0; i < split.length; i++) {
-            set.add(UUID.fromString(split[i]));
+        for (String s : split) {
+            set.add(UUID.fromString(s));
         }
 
         return set;

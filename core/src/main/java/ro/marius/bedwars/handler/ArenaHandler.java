@@ -2,6 +2,8 @@ package ro.marius.bedwars.handler;
 
 import ro.marius.bedwars.arena.Arena;
 import ro.marius.bedwars.arena.ArenaState;
+import ro.marius.bedwars.arena.observers.NPCObserver;
+import ro.marius.bedwars.npc.NPCHandler;
 import ro.marius.bedwars.sockets.ServerInfo;
 
 import java.util.*;
@@ -9,11 +11,20 @@ import java.util.stream.Collectors;
 
 public class ArenaHandler {
 
-    private final Map<ServerInfo, Arena> arenas = new HashMap<>();
+    private final Map<ServerInfo, Arena> serverInfoArena = new HashMap<>();
+
+    private final BungeecordHandler bungeecordHandler;
+    private final NPCHandler npcHandler;
+
+    public ArenaHandler(BungeecordHandler bungeecordHandler, NPCHandler npcHandler) {
+        this.bungeecordHandler = bungeecordHandler;
+        this.npcHandler = npcHandler;
+    }
+
 
     public void addGame(
             String serverIP,
-            String serverPort,
+            int serverPort,
             String arenaType,
             String arenaName,
             int playersPerTeam,
@@ -25,15 +36,18 @@ public class ArenaHandler {
     ) {
 
         ServerInfo serverInfo = new ServerInfo(serverIP, serverPort);
-        Arena arenaFound = arenas.get(serverInfo);
+        Arena arenaFound = serverInfoArena.get(serverInfo);
 
         if (arenaFound == null) {
             Arena arena = new Arena(arenaName, arenaType, playersPerTeam, maxPlayers, playersPlaying, arenaState, rejoin, spectators);
-            arenas.put(serverInfo, arena);
+            arena.setServerName(bungeecordHandler.getBungeeName(serverIP, serverPort));
+            arena.registerObserver(new NPCObserver(arena, npcHandler, this));
+            serverInfoArena.put(serverInfo, arena);
             arena.notifyObservers();
             return;
         }
 
+        arenaFound.setServerName(bungeecordHandler.getBungeeName(serverIP, serverPort));
         arenaFound.setName(arenaName);
         arenaFound.setType(arenaType);
         arenaFound.setState(arenaState);
@@ -46,14 +60,14 @@ public class ArenaHandler {
     }
 
     public Arena findArena(String name) {
-        return arenas.values().stream()
+        return serverInfoArena.values().stream()
                 .filter(s -> s.getName().equals(name) && s.getState() == ArenaState.WAITING)
                 .findFirst().orElse(null);
     }
 
     public int getPlayersPlaying(String arenaType) {
 
-        return arenas
+        return serverInfoArena
                 .values()
                 .stream()
                 .filter(arena -> arena.getType().equals(arenaType))
@@ -62,7 +76,7 @@ public class ArenaHandler {
     }
 
     public Set<String> getArenaTypes() {
-        return arenas
+        return serverInfoArena
                 .values()
                 .stream()
                 .map(Arena::getType)
@@ -70,7 +84,33 @@ public class ArenaHandler {
     }
 
     public Collection<Arena> getArenas() {
-        return arenas.values();
+        return serverInfoArena.values();
     }
 
+    public Optional<ServerInfo> getArenaServerInfo(Arena arena){
+
+        return serverInfoArena
+                .keySet()
+                .stream()
+                .filter(serverInfo -> serverInfoArena.get(serverInfo) == arena)
+                .findFirst();
+    }
+
+    public Map<ServerInfo, Arena> getServerInfoArena() {
+        return serverInfoArena;
+    }
+
+    public Optional<Arena> getAvailableArenaByType(String arenaType) {
+        return getArenas()
+                .stream()
+                .filter(a -> a.getType().equals(arenaType) && a.getState() == ArenaState.WAITING && a.getPlayersPlaying() < a.getMaxPlayers())
+                .findFirst();
+    }
+
+    public Optional<Arena> getAvailableEmptyArena() {
+        return getArenas()
+                .stream()
+                .filter(a -> a.getState() == ArenaState.WAITING && a.getPlayersPlaying() < a.getMaxPlayers())
+                .findFirst();
+    }
 }

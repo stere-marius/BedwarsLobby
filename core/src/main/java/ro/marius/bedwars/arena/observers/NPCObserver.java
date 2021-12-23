@@ -1,5 +1,6 @@
 package ro.marius.bedwars.arena.observers;
 
+import org.bukkit.Bukkit;
 import ro.marius.bedwars.arena.Arena;
 import ro.marius.bedwars.handler.ArenaHandler;
 import ro.marius.bedwars.npc.NPCArena;
@@ -30,5 +31,6 @@ public class NPCObserver implements ArenaObserver {
 
         int players = arenaHandler.getPlayersPlaying(arenaType);
         list.forEach(s -> s.getNpcHologram().update(players));
+        Bukkit.broadcastMessage("NPCObserver.update(" + players + ")");
     }
 }

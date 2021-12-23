@@ -4,8 +4,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
-import ro.marius.bedwars.utils.ConsoleLogger;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.ConsoleLogger;
+import ro.marius.bedwars.Utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class LanguageConfiguration {
 
     public String getDefaultLanguagePath() {
         return defaultLanguagePath == null ?
-                defaultLanguagePath = config.getString("default-language-path", "EN") :
+                defaultLanguagePath = config.getString("default-language-path", "en") :
                 defaultLanguagePath;
     }
 
@@ -58,7 +58,7 @@ public class LanguageConfiguration {
         config = YamlConfiguration.loadConfiguration(languageFile);
         for (LanguageKeys item : LanguageKeys.values()) {
             if (config.getString(item.getKey()) == null) {
-                config.set(item.getKey(), item.getObject());
+                config.set("en." + item.getKey(), item.getObject());
             }
         }
 

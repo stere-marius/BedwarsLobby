@@ -5,7 +5,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import ro.marius.bedwars.BedwarsLobbyPlugin;
 import ro.marius.bedwars.NPCSkin;
-import ro.marius.bedwars.utils.Utils;
+import ro.marius.bedwars.Utils;
 
 import java.io.File;
 import java.io.IOException;
